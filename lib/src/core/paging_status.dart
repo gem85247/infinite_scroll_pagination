@@ -24,7 +24,7 @@ extension PagingStatusExtension on PagingState {
       return PagingStatus.completed;
     }
 
-    if (!hasItems && !hasNextPage) return PagingStatus.noItemsFound;
+    if (!hasItems && !isLoading) return PagingStatus.noItemsFound;
 
     if (!hasPages) return PagingStatus.loadingFirstPage;
     if (hasNextPage) return PagingStatus.ongoing;
