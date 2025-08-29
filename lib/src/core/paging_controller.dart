@@ -95,6 +95,8 @@ class PagingController<PageKeyType, ItemType>
       state = state.copyWith(
         pages: [...state.pages, newItems],
         keys: [...state.keys, nextPageKey],
+        hasNextPage: newItems.isNotEmpty,
+        error: null,
       );
     } catch (error) {
       state = state.copyWith(error: error);
